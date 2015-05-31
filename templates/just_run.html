@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+
+{% block extra_head %}
+<link rel = 'stylesheet' href =" /static/unno/css/time_line.css">
+{% endblock %}
+
+{% block title%} JUST RUN {% endblock %}
+
+{% block content %}
+
+<body class = 'uk-height-1-1'>
+	<div id = 'instrucrions_container' style = 'display:none;'>使用"J"和"K"键来跳转时间线</div>
+	<div id = 'timeline_container'>
+		<header>
+			<figure>
+				<img style="width: 300px" alt="王者" title="King" src="/static/unno/img/cool.png">
+			</figure>
+		</header>
+		<ul>
+			<li class="event">
+			<div class="event_icn"></div>
+			<div class="event_content">
+				<h2 class="post_title">
+					<a href="{%url 'firework'%}">TEST</a>
+				</h2>
+			</div>
+			<div class="event_date"> 2014-04-26 15:42:49 </div>
+			</li>
+			<li class="event">
+			<div class="event_icn"></div>
+			<div class="event_content">
+				<h2 class="post_title">
+					<a href="">测试</a>
+				</h2>
+			</div>
+			<div class="event_date"> 2014-04-26 12:55:53 </div>
+			</li>
+			<li class="event active">
+			<div class="event_icn"></div>
+			<div class="event_content">
+				<h2 class="post_title">
+					<a href="">Happy Birthday</a>
+				</h2>
+			</div>
+			<div class="event_date"> 2014-04-26 12:54:22 </div>
+			</li>
+		</ul>
+	</div>
+
+
+<script type="text/javascript"></script>
+
+<script src="/static/unno/js/index.js">
+</script>
+
+<div class="uk-tooltip"></div>
+
+{% endblock %}

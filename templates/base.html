@@ -1,0 +1,117 @@
+<html>
+    <head>
+	{% block extra_head %}
+	{% endblock %}
+
+	<meta charset="utf-8">
+	<!--link rel="stylesheet" href="/static/unno/css/bootstrap.css"-->
+	<!--link rel="stylesheet" href="/static/unno/css/reset.css"-->
+	<!--link rel="stylesheet" href="/static/unno/css/style.css"-->
+	<!--link rel="stylesheet" href="/static/unno/css/code.css"-->
+	<!--script src="/static/unno/js/modernizr.js"></script-->
+	<!--script src="/static/unno/js/jquery.js"></script-->
+    <link rel = "stylesheet" href = "/static/unno/reset.css">
+	<link type="text/css" href="/static/unno/style_base.css" rel="stylesheet" >
+
+    <title>
+	{% block title%}
+	    Welcome to My World
+	{% endblock %}
+    </title>
+
+	</head>
+	<body>
+	{% block body %}
+	<header class = "wrap site__header" role = "banner">
+    <a class="site__title o--b o--p" title="Chen Ye, Developer, Designer • Home" href="/">
+        <span class="delta o--b">From the UNNO of</span>
+        <span class="o--b">Chen Ye, Developer, Designer</span>
+	</a>
+	<nav class="site__nav" role="navigation">
+		<ul class="nav">
+			<li>
+			<a  href="/just_run/">JUST RUN</a>
+			</li>
+			<li>
+			<a  href="/unno/">UNNO</a>
+			</li>
+			<li>
+			<a  href="/never_say_no/">NERVER SAY NO</a>
+			</li>
+			<li>
+			<a href="/now_or_never/">NOW OR NEVER</a>
+			</li>
+			<li>
+			<a  href="/blog/">BLOG</a>
+			</li>
+		</ul>
+	</nav>
+
+	<main class="wrap site__content page" role="main">
+	<article class="grid hentry">
+    {% block content %}
+
+	{% block content_header %}
+	<header class="page__header grid__col grid__col--2-of-6">
+		<h1 class="page__title">About</h1>
+	</header>
+	{% endblock %}
+		{% block article %}
+		{% endblock %}
+	
+    {% endblock %}
+    </article>
+	</main>
+	{% endblock %}
+	{% block footer %}
+	<footer class="wrap site__footer" role="contentinfo">
+	<div class="grid">
+		<section class="small grid__col grid__col--2-of-6 p-author vcard">
+			<h4>About</h4>
+			<p>
+			My name is<span class="fn"> Crayon Chaney</span>. I pursue unno, i keep going, and i
+			never say <span class="caps">NO</span>
+			</p>
+		</section>
+		<section class="small grid__col grid__col--2-of-6">
+			<h4>Colophon</h4>
+			<p>
+			Maintained by
+			<a href="/about">Crayon Chaney</a>. Hosted by Crayon Chaney. Domain name from <a href = "http://www.godaddy.com">
+				GODADDY</a>, same to the VPS. Thank you for everybody that help me bulid this website.
+			</p>
+		</section>
+		<section class="small grid__col grid__col--2-of-6">
+			<h4>Points of Interest</h4>
+			<ul>
+			<li>
+			    <a href="/just_run/">JUST RUN</a>
+			</li>
+			<li>
+			    <a href="/unno/">UNNO</a>
+			</li>
+			<li>
+			    <a href="/never_say_no/">NERVER SAY NO</a>
+			</li>
+			<li>
+			    <a href="/now_or_never/">NOW OR NEVER</a>
+			</li>
+			<li>
+			<a href="/blog">BLOG</a>
+			</li>
+			</ul>
+		</section>
+	</div>
+    </footer>
+	{% endblock%}
+
+	</div>
+	<div class="footer__copyright wrap small caps promo isle--v">
+		<p>© 2014 Crayon Chanye. Push the human-being forward</p>
+	</div>
+	<script src = "/static/unno/js/bootstrap.min.js"></script>
+	
+
+	</body>
+
+</html>

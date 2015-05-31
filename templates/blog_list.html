@@ -1,0 +1,43 @@
+{% extends "blog.html" %}
+{% load comments %}
+{% block title %}
+Blog List
+{% endblock%}
+
+{% block article %}
+    <ul class="unl posts__list">
+    {% for blog in blogs %}
+	<li class="o--p">
+	<a class="a--plain" href="{% url 'detailblog' blog.id %}">
+		<span class = "o--b beta o--z" ><font face = "Hiragino Maru Gothic Pro">{{ blog.caption}}</font></span>
+		<span class = 'meta delta o--b'>
+	    	{% for tag in blog.tags.all %}
+			<small>{{ tag }}</small>
+	    	{% endfor %}
+		</span>
+        <span class = "meta delta o--b"><i class = "icon-time"></i>{{ blog.publish_time}}</span>
+            <!--div class="span2 offset7">
+                <a href="{% url 'delblog' blog.id %}" title="delete"><i class="icon-trash"></i></a>
+                <a href="{% url 'updateblog' blog.id %}" title="edit"><i class="icon-edit"></i></a>
+                {% get_comment_count for blog as comment_count %}
+                <a href="{% url 'detailblog' blog.id %}#cmt" title="comment"><i class=" icon-comment"></i>{{ comment_count }}</a>
+            </div-->
+        </div>
+		<br/>
+    </a>
+	</li>
+	{% endfor %}
+	</ul>
+{% endblock %}
+
+{% block aside %}
+<a class = 'btn' href = "{% url 'addblog' %}"><i class = 'icon-plus'></i>ADD NEW BLOG</a>
+{% block tags %}
+<div class = 'well'>
+	{% for tag in tags %}
+	<span class = 'label'><a href = "{url 'filtrblog' tag.id}">{{tag}}</a></span>
+	{% endfor %}
+</div>
+{% endblock %}
+
+{% endblock %}

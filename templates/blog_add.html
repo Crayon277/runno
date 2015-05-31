@@ -1,0 +1,41 @@
+{% extends 'blog.html' %}
+
+{% block title%} Post Blog {% endblock %}
+
+{% block article %}
+
+<form action = '' method = 'post'>
+	{% csrf_token %}
+	<div class = 'field'>
+		<label for = 'id_catption'>Title:</label>
+		{% if form.caption.errors %}
+		<div class = 'alert alert-error'>
+			{{form.caption.errors}}
+		</div>
+		{% endif %}
+		{{form.caption}}
+	</div>
+	<div class= 'field'>
+		<label for = 'id_content'>Content:</label>
+		{% if form.content.errors %}
+		<div class = 'alert alert-error'>
+			{{form.content.errors}}
+		</div>
+		{% endif %}
+		{{form.content}}
+	</div>
+	<div class = 'field'>
+		<label for = 'id_tag'>Tags</label>
+		{% if form.tag_name.errors %}
+		<div class = 'alert alert-error'>
+			{{form.content.errors}}
+		</div>
+		{% endif %}
+		{{form.tag_name}}
+	</div>
+	<div class = 'form-action'>
+		<input class = 'btn btn-primary' type = 'submit' value = 'save and post'>
+	</div>
+</form>
+
+{% endblock %}

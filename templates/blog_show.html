@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block title %}{{blog.caption}}{% endblock %}
+
+
+{% block content %}
+	{% block article %}
+	<header class="post__header grid__col grid__col--2-of-6">
+		<h1 class="post__title"><font face = "Hiragino Maru Gothic Pro">{{blog.caption}}</font></h1>
+		<p class="delta post__meta meta">
+		<i class = 'icon-time'></i><small>{{blog.publish_time}}</small>
+		</p>
+		<p class = "delta post__meta meta">
+		<small>By {{blog.author}}</small>
+		</p>
+	</header>
+	<!--section-->
+	    <div class="grid__col grid__col--4-of-6">
+		    {% block article_content %}
+		        <div><font face = "Libian SC">{{blog.content}}</font></div>
+		    {% endblock %}
+    	</div>
+	<!--/section-->
+	<!--section>
+		<div class = "row-fluid post-info">
+			<div class = 'span3'>
+				<p>
+				<i class = 'icon-tag'></i>
+				{% for tag in blog.tags.all %}
+				    <small class = 'muted'>{{tag}}</small>
+				{% endfor %}
+				</p>
+			</div>
+		    <div class = 'span2 offset7'>
+			    <a href="{% url 'delblog' blog.id %}" title="delete"><i class="icon-trash"></i></a>
+                <a href="{% url 'updateblog' blog.id %}" title="edit"><i class="icon-edit"></i></a>
+                <a href="#cmt" title="comment"><i class=" icon-comment"></i></a>
+		    </div>
+		</div>
+
+	</section-->
+	{% endblock %}
+	</article>
+
+{% endblock %}
+
